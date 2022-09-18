@@ -1,0 +1,14 @@
+
+---İncele dediğimizde tag olarak select varsa orada dropdown vardır denebilir
+---select'in yanındaki kısma tıklayınca karşımıza çıkan option tagları dropdown(açılır pencere) içinde bulunanları içerir
+---DropDown'da 3 adım vardır
+   Adim1: Dropdown menuyu herhangi bir locator ile locate edin.
+   WebElement ddm=driver.findElement(By.id(“value of id"));    (Her zaman kullanabilmek için WebElemente atadık)
+   ➢ Adim 2: Yeni bir “Select” objesi olusturun ve daha once
+   locate ettigimiz WebElement’i parametre olarak yeni
+   objeye ekleyin
+   Select options=new Select(ddm);
+   ➢ Adim 3: Select class’indan kullanabileceginiz 3
+   yontemden biriyle dropdown menusundeki
+   elemananlardan istediginizi secin
+   options.selectByIndex(1)

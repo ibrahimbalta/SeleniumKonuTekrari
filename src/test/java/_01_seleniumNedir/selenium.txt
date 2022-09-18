@@ -1,0 +1,28 @@
+Selenium’u üç ana başlıkta toplayabiliriz. Bunlar ;
+
+Selenium IDE
+Selenium WebDriver
+Selenium Grid‘dir.
+1.  Selenium IDE
+
+Selenium IDE, Firefox ile beraber çalışan bir eklentidir. Web taracıyıda çalışan bir javascript
+olarak da düşünülebilir. Web taracıyıcı üzerinden yaptığımız tüm aksiyonları kaydedip çıktısını verir.
+
+2. Selenium WebDriver
+
+Selenium WebDriver bizlere tarayıcı üzerinden tüm aksiyonları yapabilmemizi sağlar. WebDriver sayesinde
+başlıca front end text kontrolleri, kullanıcı giriş işlemleri, fonksiyonun lokasyon kontrolleri,
+fonksiyonel işlem kontrolleri, veri kontrolleri, raporlama ve hatanın ekran görüntüsünü alma gibi işlemleri yapabilmekteyiz.
+
+Örneğin test edeceğiniz bir sitenin en alt sayfasında bulunan yorum formunun çalışıp çalışmadığını test etmeniz gerekiyor.
+Bunun için ilk olarak siteye gireriz ve bir sonraki adımda scroll ile sayfanın en alt kısmında bulunan yorum
+formunun bulunduğu kısma geliriz.Ama Selenium bize scroll işlemini kod çıktısı olarak verememektedir.
+Burada WebDriver’ın özgürlükçü yapısı devreye girmektedir. WebDriver elementlerini kullanarak test caselerimizi
+daha çalışılabilir ve kontrolünü sağlayabilir hale getirebilmemizi sağlıyor.
+
+3. Selenium Grid
+
+Selenium Grid oluşturulan test caselerinin farklı ortamlarda aynı anda koşulmasını sağlamaktadır. Farklı ortamlar dediğimiz
+aslında işletim sistemi, sunucular vb. gibi örnekler yer almaktadır. Burada çıkan sonuç hangi ortamda daha hızlı sonuç
+alabileceğimizinde bir göstergesi olmaktadır.
+

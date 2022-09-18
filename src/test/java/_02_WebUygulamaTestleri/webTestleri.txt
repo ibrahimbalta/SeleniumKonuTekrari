@@ -1,0 +1,154 @@
+Web uygulama testleri; web üzerinde barınan uygulamaların arabirimleri ve diğer işlevlerini test
+etmek için kullanılan özel bir test yöntemidir. Uygulamaların tamamen işlevsel, sorunsuz
+ve güvenli bir şekilde çalışmasını sağlamaktadırlar.
+
+Web Uygulama Testleri Nelerdir ve Kaç Farklı Yöntem Uygulanmaktadır ?
+Web uygulama testleri, 8 farklı yöntem ile incelenebilmektedir. Bunlar;
+
+1) Fonksiyonel Test,
+2) Oturum ve Çerez Testi,
+3) Veritabanı Testi,
+4) Arabirim Testi,
+5) Kullanılabilirlik Testi,
+6) Uyumluluk Testi,
+7) Performans Testi,
+8) Güvenlik Testi’dir
+
+  Fonksiyonellik Testi
+  Sayfalardan diğer sayfalara giden bağlantı kontrolleri: Doğru sayfaya gidildiğinden veya yönlendirildiğinden emin olunmalıdır.
+  Bu şekilde ölü bir sayfa veya geçersiz yönlendirme olmadığından emin olunabilmektedir.
+
+  Aynı sayfa üzerindeki bağlantılar: Sayfadaki bağlantılar tek tek kontrol edilmelidir. Varsa e-posta linkleri, web formları da atlanmamalıdır.
+
+  Her alanın, alan doğrulama mantığı ve varsayılan değerleri kontrol edilmelidir.
+
+  Parola alanlarının şifre içeriğini göstermediği görülmelidir.
+
+  Negatif test yapılmalı, her alan için geçersiz girdi değerleri denenmelidir.
+
+  Eğer varsa form gönderilirken, yanıtın geçerliliği doğrulanmalıdır.
+
+  Her alan için validasyon kontrolleri yapılmalıdır.
+
+  Yerelleştirme Testi: ürünün yerel kültüre veya ayarlara göre davranmasını sağlamak için kontrol edildiği bir yazılım test tekniğidir.
+  Uygulamayı, hedeflenen dil ve ülke özelliklerine uyarlama sürecidir.
+
+  Yerelleştirme sınamasından etkilenen başlıca alanlar içerik ve kullanıcı arayüzüdür.  Arayüzü, varsayılan dili, para birimini,
+  tarihini, saat biçimini ve belgeleri hedeflenen ülke veya bölgeye göre tasarlanıp tasarlanmadığı test edilmektedir.
+
+  Oturum ve Çerez Yönetim Testi
+  Çerez bilgileri, kullanıcı makinesinde saklanan küçük dosyalardır. Bunlar temel olarak oturumu korumak için kullanılır.
+
+  Tarayıcı seçeneklerindeki tanımlama bilgilerini etkinleştirerek veya devre dışı bırakarak uygulama kontrol edilmelidir.
+
+  Çerezlerin kullanıcı makinesine yazılmadan önce şifrelenip / şifrelenmediğini kontrol edilmelidir. Oturum çerezlerini test ediliyorsa,
+  oturum bittikten sonra oturum sayıları kontrol edilmelidir. Uygulama güvenliğini test ediliyorsa, çerezler silinerek kontrol edilmelidir.
+  Çerezleri etkinleştirip/devre dışı bırakarak uygulama oturum açma/kapatma durumları,  tarayıcılar arası geçişte ise çerezlerinin sıfırlanması kontrol edilmelidir.
+
+  CSS düzenlemeleri sonrasında ise, tekrar uygulamaya giriş yapılarak, eski çerezlerin CSS’e etkisi kontrol edilmelidir.
+  Bu kısımda CSS çerezlerinin tarayıcıdan otomatik olarak silinip yeni CSS düzenlemesini sorunsuz göstermesi beklenmektedir.
+  Bu durum tam tersi ise; bu durumda yazılımcılardan her css düzenlemesi sırasında
+  kod yapısına “style.css?ver=1 , style.css?ver=2 , style.css?ver=3” gibi  versiyon bilgisini girmesi beklenmektedir.
+
+  Çerezleri (oturumlar) silindikten sonra, siteye bir sonraki ziyarette kimlik bilgilerinin sorulması gerekmektedir.
+
+  Veritabanı Testi
+  Bağlantılı web formlarında veri tutarlığı,
+  Ekleme, düzenleme, silme fonksiyonları
+  Veri alımının doğru veriyi alıp almadığı
+  Veritabanı bağlantısını ve sorgu sonucunda oluşabilecek hata kodları ve o kodların karşılıkları,
+  Sorguların yanıt süreleri kontrol edilmektedir
+
+  Arabirim Testi
+  Sistemlerin veya bileşenlerin veri iletip geçmediğini ve birbirini doğru şekilde kontrol edip etmediğini değerlendirmek için
+  gerçekleştirilmektedirler. Bu sayede modüller arasındaki tüm etkileşimlerin düzgün çalışıp çalışmadığı ve hataların doğru bir
+  şekilde ele alınıp alınmadığı doğrulanmaktadır.
+
+  Test edilecek üç alan bulunmaktadır: Uygulama, Web ve Veritabanı Sunucusu. Bu sunucular arasındaki tüm etkileşimlerin yürütülüp
+  yürütülmediği kontrol edilmektedir.
+
+  Veritabanı veya web sunucusu, uygulama sunucusu tarafından herhangi bir sorgu için herhangi bir hata iletisi döndürürse,
+  ekrandaki hata kullanıcılara uygun bir şekilde gösterilip gösterilmediği, kullanıcı işlemler sırasında herhangi bir işlemi
+  keserse ne olacağı, oturum gerektiren sayfalarda, cihazın internet ağı değiştirilirse oturumun düşüp düşmediği kontrol edilmektedir.
+
+  Kullanılabilirlik Testi
+
+Web sitelerinin kullanım kolaylıklarını,
+Sağlanan talimatlaınr netliğini,
+Verilen talimatların amacına ulaşmak için anlaşılır olup olmadıklarını,
+Özel bir istek yoksa, her sayfada ana menü sağlanıp sağlanmadığını,
+İçeriğin mantıklı ve anlaşılması kolay olup olmadığını,
+Yazım hatalarını,
+Resimlerin uygun boyutlarda düzgün yerleştirilip yerleştirilmediği,
+Koyu renklerin kullanılmasının kullanıcıları rahatsız edip etmediğini kontrol etmektedir.
+Yaygın bir şekilde kabul gören standartları uygulamak faydalı olmaktadır. Bunlar web geliştirmede takip edilmesi gereken temel önemli standartlardan bazılarıdır.
+
+Kullanıcılara yardımcı olmak için;
+
+Site haritası geliştirirken, navigasyonun ağaç görünümüne sahip ve web sitelerindeki tüm bağlantılar ile birlikte olmasına,
+site haritasındaki tüm bağlantıların kontrol edilmesine önem verilmelidir.
+
+“Sitede ara” seçeneği, kullanıcıların aradığı içerik sayfalarını kolayca ve hızlı bir şekilde bulmasına yardımcı olmaktadır.
+Kullanıcı tarafından bu kısma her şey girilebilmelidir.
+
+Uyumluluk Testi
+
+Web Uygulama Testleri  için Uyumluluk Testleri çok önemlidir. Bunları 4 ana başlık altında incelenebilmektedirler.
+
+Tarayıcı Uyumluluğu
+İşletim Sistemi Uyumluluğu
+Mobil Cihaz Uyumluluğu
+Yazdırma Seçenekleri
+Tarayıcı Uyumluluğu: Bazı uygulamalar tarayıcılara çok bağımlıdırlar. Yani bazı uygulamalar bütün fonksiyonlarını X
+tarayıcısında eksiksiz çalıştırırken, Y tarayıcısında çalıştırmayabilmektedir.  Bu sebepten uygulamaların sadece tek bir
+tarayıcıda üstün performansla çalışmakla kalmayıp, piyasada kullanılan diğer tarayıcılarda da yüksek performansta çalışması beklenmektedir.
+ Web uygulamalarının Firefox, IE, Chrome, Opera ve Safari gibi çeşitli tarayıcılarda doğru çalıştığını kontrol edilmektedir.
+
+Farklı tarayıcılarla web sayfalarının uyumlu olmasını sağlayan farklı yapılandırmalar ve ayarlar bulunmaktadır. Web sitelerinin kodlamaları
+çapraz tarayıcı  (  Cross Browser ) platformuyla uyumlu olmalıdılar.
+
+İşletim Sistemi Uyumluluğu: Web uygulamalarındaki bazı işlevler, tüm işletim sistemleriyle uyumlu olamayabilmektedir. Web geliştirmede
+kullanılan yeni teknolojiler, tüm işletim sistemlerinde düzgün çalışmayabilmektedir. Bu nedenle web uygulamalarının
+Windows, Unix, MacOS, Linux, Solaris gibi farklı işletim sistemlerinde testleri yapılmalıdır.
+
+Mobil Cihaz Uyumluluğu: Konum ve arama özellikleri de dahil olmak üzere cihaz özellikleri ile uygulama uyumluluğu,
+
+Ekran döndürme dahil olmak üzere mobil cihaz ekran boyutlarında nasıl çalıştığı,
+
+Cihaz, şebeke servisleri kapsamındayken ve dışındayken uygulamanın çalışıp çalışmadığı kontrol edilmektedir.
+
+Yazdırma Seçenekleri: Sayfa yazdırma seçenekleri sunuluyorsa, yazı tiplerinin, sayfa hizalamasının, sayfa grafiklerinin vb.
+özelliklerin, doğru şekilde yazdırıldığı, sayfalar kağıt boyutuna veya yazdırma seçeneğinde adı geçen boyuta uygun olup olmadığı kontrol edilmektedir.
+
+Performans Testi
+
+Sistemin belirli durumlarda, belirlenen beklentileri verip vermediğini kontrol etmek amacıyla yapılan testlerdir.
+Performans testleri sistemdeki bug’ların bulunmasını amaçlamamakta; ancak sistemdeki darboğazları ortaya çıkarmaktadır.
+
+Performans testleri aşağıdaki soruların cevaplarını vermektedirler.
+
+Sistem trafiğindeki artışlar; işlem süresini ve güvenliğini nasıl etkiler?
+Hangi kullanıcı seviyesinde performans problemleri yaşanır?
+Performans seviyelerindeki düşüş sistemin hangi bileşeninden kaynaklanır?
+Normal şartlar altında sistem nasıl davranıyor?
+Temel olarak 3 çeşit performans testi bulunmaktadır. Bunlar;
+
+Performans Testi: Uygulamalarının normal şartlar altındaki performans seviyelerinin belirlenmesidir.
+
+Load (Yük) Testi: Uygulamaya giderek artan sayıda (sistem çökene kadar) virtual user la yüklenilerek sistemin sınırlarının ölçülmesidir.
+
+Stress Testi: Maksimum sayıdaki kullanıcı ile periyodik bir şekilde sisteme yüklenilmesidir. Amaç bir kaos ortamında sistemin bu
+tür durumlara verdiği tepkiyi ölçmek ve arıza giderildiğinde sistemin toparlama seviyesini belirlemektir.
+
+Güvenlik Testi
+
+Çok geniş bir yer kaplayan ve çok önemli bir test yöntemidir. Bu yöntemin:
+
+Kullanıcı Girdilerinin Kontrolü,
+HTML Çıktı Kodlama-Output Encoding,
+Veri Tabanı Güvenliği,
+Hareket Halindeki Veriyi Korumak,
+Parola güvenliği,
+Güvenli Kimlik Doğrulama,
+Kullanıcı Oturumlarını Yönetmek ve
+Yetkilendirme başta olmak üzere birçok kontrol edilmesi gereken kriteri bulunmaktadır.
