@@ -1,0 +1,18 @@
+1. TestBase Class : Her test class’inda tekrar tekrar yazdigimiz setup ve teardown method’lari tekrar
+yazmaktan kurtulmak icin Java OOP konsept’I kullanarak olusturdugumuz bir class’dir
+- Test Base’I parent olarak Kabul eden class’lar hazirlik icin olusturdugumuz driver, setup( ) ve
+teardown( ) olusturmak zorunda kalmazlar, kendilerinde olmasa bile parent class’dan kullanilmis
+olur.
+- TestBase genelde testlerden farkli bir package’da oldugundan driver’i kullanabilmek icin public
+veya protected yapmamiz gerekir. Biz hep child class’lardan kullanacagiiz icin protected yapmayi
+tercih ettik
+- Bu class sadece child class’lardan inheritance ozellikleri ile kullanilsin istedigimizden, bu class’in
+obje olusturularak kullanilmasina engel olmak icin class’I abstract YAPABILIRIZ.
+2. Actions Class : Selenium’daki Actions class’i mouse ve klavye ile yapabildigimiz eylemleri driver ile
+yapabilmemize imkan tanir.
+1- Mouse Base Actions :
+click(), contextClick(), doubleClick(),clickAndHold(),dragAndDrop(),moveToElement()
+2- Keyboard Base Actions :
+keyDown(), keyUp(), sendKeys()
+Actions class’ini kullanabilmek icin actians objesi olusturup, parametre olarak driver’imizi eklemeli, en
+sona da perform() demeyi unutmamaliyiz.

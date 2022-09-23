@@ -11,7 +11,7 @@ import utilities.TestBaseBeforeAfter;
 public class C02_Actions extends TestBaseBeforeAfter {
 
     @Test
-    public void test01() {
+    public void test01() throws InterruptedException {
         //2- https://html.com/tags/iframe/ sayfasina gidelim
         driver.get("https://html.com/tags/iframe/");
 
@@ -22,15 +22,19 @@ public class C02_Actions extends TestBaseBeforeAfter {
                 .sendKeys(Keys.PAGE_DOWN)
                 .perform();
 
-
+         Thread.sleep(3000);
         //4- videoyu izlemek icin Play tusuna basin
         WebElement iframe=driver.findElement(By.xpath("//iframe[@src='https://www.youtube.com/embed/owsfdh4gxyc']"));
         driver.switchTo().frame(iframe);
         driver.findElement(By.xpath("//button[@class='ytp-large-play-button ytp-button ytp-large-play-button-red-bg']")).click();
+
         //5- videoyu calistirdiginizi test edin
         WebElement youtubeLinki=driver.findElement(By.xpath("//a[@class='ytp-youtube-button ytp-button yt-uix-sessionlink']"));
         Assert.assertTrue(youtubeLinki.isDisplayed());
 
+
+        Thread.sleep(3000);
+        driver.quit();
 
     }
 
