@@ -1,0 +1,48 @@
+Web Tables
+Bir Web sayfasinda webelementleri duzenlemek icin HTML tablo oluşturabiliriz
+HTML tablo farkli sekillerde olusturulabilir ama genellikle <table>
+, <theader>, <tbody>, <tr>, <th> ve <td> attribute’leri kullanilir.
+
+ //Genel HTML kodlari acisindan tablo elementleri tag'lerle belirlenmistir.
+    //             - <table>
+    //             - <header> tablonun baslik kismini belirler
+    //                <tr> veya <th> satirlari
+    //                <td> satirdaki cell numarasini verir(bunu sutun diye adlandirabiliriz ama kodlarda sutun yoktur)
+    //             - <tbody> tablo body'si
+    //                <tr> satirlari
+    //                <td> satirdaki cell numarasini verir(bunu sutun diye adlandirabiliriz ama kodlarda sutun yoktur)
+
+    //incele dedigimizde table tagının altında thead olur yani baslık, bunun altındakilerde artık
+    // th baslığın birinci satırını veriyor. td lerde baslığın hücrelerini sutunlarını veriyor.
+    // tr den sonraki th baslığın ikinci satirını veriyor
+
+
+    /**
+      Tabloda <table> tag'i altinda tablonun basligini gosteren <thead> tag, bulunur.
+      Eger baslikta satir(row) varsa <thead> tag'i altinda <tr> (satir-row) tag'i vardir
+      ve basliktaki sutunlara yani hucrelere(cell) de <th> tag'i ile ulasilir
+      Basligin altindaki tablolara <tbody> tag'i ile altindaki satirlara(row) <tr> tag'i
+      ile sutunlara yani hıcrelere <td> tag'i ile ulasilir
+ */
+
+ //incele kısmına //thead//tr//th yazarak sutun sayısı bulunur
+         //  //thead yazılıp
+         //tr satırları
+         //th sutunları verir
+
+
+          //thead —> başlık
+                 //th --> 1.satır
+                 //tr--> 1.satır-1.eleman
+
+
+//thead-->Title başlıklari
+        //tbody --> Title tablo
+
+        //table row =tr
+        //table header = th
+        //table data= td
+
+
+
+ 

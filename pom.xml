@@ -15,9 +15,7 @@
 
     <dependencies>
 
-        <!-- Ekleyeceğiniz tüm dependencies tagının içine eklemeliyiz
-        aksi taktirde projemiz calismaz -->
-
+        <!-- selenium için bunu yükledik -->
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -25,6 +23,7 @@
             <version>4.1.2</version>
         </dependency>
 
+        <!-- web driver için yüklendi -->
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -32,6 +31,7 @@
             <version>5.1.0</version>
         </dependency>
 
+        <!-- JUnit için yüklendi -->
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
@@ -40,6 +40,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Faker kütüphanesi için yüklendi -->
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
@@ -47,9 +48,32 @@
             <version>1.0.2</version>
         </dependency>
 
+        <!-- Exel için yüklendi poi -->
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+
+        <!-- Exel için Hata almamak amaçlı yüklendi -->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+
+
+        <!-- Exel için yüklendi poi-ooxml -->
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.2</version>
+        </dependency>
 
 
 
     </dependencies>
-
 </project>

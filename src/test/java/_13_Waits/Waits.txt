@@ -1,0 +1,107 @@
+Synchronization - Selenium Waits
+➢ Synchronization(Senkronizasyon), UI (kullanıcı arayüzü) otomasyon testi için çok çok önemlidir.
+➢ Bir sayfanın uygulama sunucusu veya web sunucusu
+çok yavaşsa veya internet ağı çok yavaşsa, web
+sayfasındaki öğe (webelement) çok yavaş yüklenir.
+➢ Bu durumda, komut dosyanız (test script) öğeyi
+bulmaya çalıştığında, öğeler yüklenmez.
+➢ Bu yüzden test komut dosyası(test script) öğeyi bulamaz ve başarısız olur ve
+NoSuchElementExeption alırız.
+
+Synchronization - Selenium Waits
+➢ Driver ile cihaz veya internet arasinda yasanan senkronizasyon sorunlarini çözmek icin
+sürücümüzü(driver) belli sartlar ile bekletmemiz(wait) gerekir.
+1 ) Java tabanli wait
+Thread.sleep : Javadan gelir ve kodlari yazilan
+sure kadar bekletir. Sure dolduktan sonra alt
+satirdan isleme devam eder
+
+2 ) Selenium tabanli wait’ler
+-----> Implicitly Wait: Sayfadaki tüm öğeler için global bir
+zaman aşımıdır(timeout).
+-----> Explicitly Wait: Çoğunlukla belirli öğeler için belirli bir koşul(expected condition)
+için kullanılır.
+
+IMPLICITLY WAIT
+Bir sayfanin yuklenmesi veya sayfadaki her bir öğenin locate edilebilmesi için driver’i bekletir.
+Selenium tabanli wait’lerde verilen sure max. bekleme suresidir, islem daha once biterse surenin
+bitmesi beklenmez, kod calismaya devam eder.
+Genellikle otomasyon frameworklerinde olasi senkronizasyon
+problemleri icin default olarak implicitly wait ile kullanilir.
+Implicitly wait’i TestBase class’ımızda kullanıyoruz.
+
+driver.manage().timeouts().implicitlyWait(Duracation.ofSeconds(10));
+
+Bu kod, driver’in sayfadaki herhangi bir weblement için maximum 10
+saniye beklemesini istediğimiz anlamına gelir.
+Webelement 10 saniyeden kisa surede yüklenirse driver bulur ve devam eder. Örneğin, Webelement 3
+saniye içinde yüklenirse, driver sadece 3 saniye bekleyecek ve bir sonraki satıra geçecektir.
+Webelement 10 saniye içinde yüklenmezse, test case başarısız olur ve NoSuchElementExeption
+uyarısı verir.
+
+EXPLICIT WAIT
+Beklenen bir durum(expected condition) olduğunda explicit wait kullanılır.
+Implicitly wait ile cozulebilecek durumlar icin expilicitly wait kullanimina ihtiyac yoktur.
+Nadiren karsimiza cikan ve daha fazla bekleme süresi
+gerektiren belirli öğeler(webelement) için explicitly wait
+kullanılır.
+İlk olarak belirli miktarda bekleme süresi ile wait object
+create edilir.
+
+WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+
+Olusturdugumuz wait objesi sayesinde WebDriverWait class’indan
+ until( ) method’u ile birlikte ExpectedConditions Class’ini kullanabiliriz.
+Ornegin WebElement’i locate etmek icin wait object’i kullanma.
+
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("...")));
+
+EXPLICIT WAIT
+Expected Conditions
+1.alertIsPresent( )
+2.elementSelectionStateToBe( )
+3.elementToBeClickable( )
+4.elementToBeSelected( )  Element seçilinceye kadar bekle
+5.frameToBeAvaliableAndSwitchToIt( ) Erişilebilir oluncaya kadar bekle
+6.invisibilityOfTheElementLocated( ) Görünmez oluncaya kadar bekle
+7.invisibilityOfElementWithText( )
+8.presenceOfAllElementsLocatedBy( )
+9.presenceOfElementLocated( )
+10. textToBePresentInElement( )
+11. textToBePresentInElementLocated( )
+12.textToBePresentInElementValue( )
+13.titleIs( )
+14.titleContains( ) Title şunu içerinceye kadar bekle
+15.visibilityOf( )
+16.visibilityOfAllElements( )
+17.visibilityOfAllElementsLocatedBy( )
+18.visibilityOfElementLocated( )
+
+Selenium Waits:
+Thread.sleep(ex:2000);
+ Implicitly Wait
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+ Explicitly Wait
+1-WebdriverWait wait=newWebDriverWait(driver,Duration.ofSecond(20));
+
+2-WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("…")));
+
+
+1. Selenium waits, (senkronizasyon) : Kodlarimizla, internet ve bilgisayarin calismasini uyumlu hale
+getirmek icin bazen kodlarimizi bekletmemiz gerekir.
+2. Seleniumda kullandigimiz 3 cesit wait vardir.
+1. Thread.sleep() : Java’dan gelir ve kodlari durdurur. Kendisine verilen surenin tamamini bekler.
+Dinamik degil statiktir.
+2. implicitlyWait : Selenium’dan gelir. Sayfanin yuklenmesi ve herbir webElementin lovcate edilmesi
+icin beklenecek max. sureyi belirler. Esnektir. Esas olan beklemek degil, kodun calismasini
+saglamaktir. Kod calisirsa beklemeden devam, kod calismazsa max.sure doluncaya bekler ve
+sonra hata mesaji verir(Exception).
+3. ExplicitlyWait : Selenium’dan gelir, spesifik bir islem icin beklenecek max. sureyi belirler.
+ExplicitlyWait kullanabilmek icin wait objesi olusturmamiz gerekir.
+wait.until(exoectedConditions….. Istedigimiz fonk.) seklinde kullanilir.
+Genellikle wait.until() method’u locate ile birlikte kullanilir.
+
+
+
+
+
